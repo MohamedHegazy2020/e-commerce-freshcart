@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-light">
+      <nav className="navbar navbar-expand-md navbar-light shadow">
         <div className="container-fluid">
           <Link className="navbar-brand" to="#">
             <img src={logo} alt="" />
@@ -46,7 +46,7 @@ export default function Navbar() {
                   onClick={(e) => {
                     setAtiveNavItem(e.target);
                   }}
-                  to="#"
+                  to="/brands"
                 >
                   brands
                 </Link>
