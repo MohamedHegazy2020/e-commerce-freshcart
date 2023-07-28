@@ -50,7 +50,7 @@ export default function DetailSlider({ imgs }) {
             src={img}
             alt=""
             className={
-              i == 0 ? detSlider.active_dot + " img-fluid" : "img-fluid"
+              i === 0 ? detSlider.active_dot + " img-fluid" : "img-fluid"
             }
             onClick={(e) => {
               setActiveDot(e.target);
