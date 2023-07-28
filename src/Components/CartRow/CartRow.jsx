@@ -19,7 +19,7 @@ export default function CartRow({ product }) {
 							style={{ maxHeight: "70px" }}
 							alt={product.product.title}
 						/>{" "}
-						<h6>{product.product.title}</h6>
+						<h6 className="text-muted">{product.product.title}</h6>
 					</div>
 				</td>
 				<td>
