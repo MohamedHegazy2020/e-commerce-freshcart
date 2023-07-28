@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Login({ getUserData }) {
 	function displayWelcomeUserToast() {
 		$(".toast-container")
-			.append(`<div class="toast align-items-center  text-bg-danger border-0" welUser role="alert" aria-live="assertive" aria-atomic="true">
+			.append(`<div class="toast align-items-center  text-bg-danger border-0 welUser"  role="alert" aria-live="assertive" aria-atomic="true">
 				<div class="toast-body">
 				 Welcome Back 
 				</div>
@@ -25,7 +25,7 @@ export default function Login({ getUserData }) {
 	}
 	function displayErrUserToast(message) {
 		$(".toast-container")
-			.append(`<div class="toast align-items-center  text-bg-danger border-0" errUser role="alert" aria-live="assertive" aria-atomic="true">
+			.append(`<div class="toast align-items-center  text-bg-danger border-0 errUser"  role="alert" aria-live="assertive" aria-atomic="true">
 				<div class="toast-body">
 				${message}
 				</div>
