@@ -20,7 +20,7 @@ export default function CartContextProvider({ children ,currUser }) {
 	const navigate = useNavigate()
 
 	useEffect(() => {
-		if (!cartProductsCount&&currUser) getLoggedUserCart();
+		if (!cartProductsCount) getLoggedUserCart();
 	});
 
 	// animation effects function

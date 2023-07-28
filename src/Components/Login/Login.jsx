@@ -19,7 +19,26 @@ export default function Login({ getUserData }) {
 				$(`.welUser`).fadeOut(1000, () => {
 					$(`.welUser`).remove();
 				});
-			}, 3000);
+
+			}, 3000); 
+		});
+	}
+	function displayErrUserToast(message) {
+		$(".toast-container")
+			.append(`<div class="toast align-items-center  text-bg-danger border-0" errUser role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-body">
+				${message}
+				</div>
+			      </div> `);
+
+		$(`.errUser`).fadeIn(1000, () => {
+			console.log('hhhhh');
+			setTimeout(() => {
+				$(`.errUser`).fadeOut(1000, () => {
+					$(`.errUser`).remove();
+				});
+
+			}, 3000); 
 		});
 	}
 
@@ -35,13 +54,14 @@ export default function Login({ getUserData }) {
 			if (data.message === "success") {
 				// console.log("succ");
 				localStorage.setItem("token", data.token);
+				displayWelcomeUserToast()
 				getUserData();
 				navigate("/");
-				displayWelcomeUserToast();
 			}
 			//       console.log(data);
 		} catch (error) {
 			//       console.log(error.response.data.message);
+			displayErrUserToast(error.response.data.message)
 			
 		}
 	}
