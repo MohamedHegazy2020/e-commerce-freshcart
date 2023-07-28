@@ -10,7 +10,7 @@ export const cartContext = createContext();
 
 // cartContext.Provider=
 
-export default function CartContextProvider({ children ,currUser }) {
+export default function CartContextProvider({ children }) {
 	const [cartProducts, setcartProducts] = useState(null);
 	const [cartProductsCount, setcartProductsCount] = useState(null);
 	const [totalCartPrice, settotalCartPrice] = useState(null);

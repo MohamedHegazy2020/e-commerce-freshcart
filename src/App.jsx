@@ -55,7 +55,7 @@ export default function App() {
 		{
 			path: "",
 			element: (
-				<CartContextProvider currUser={currUser}>
+				<CartContextProvider>
 					
 						<Layout currUser={currUser} clearUserData={clearUserData} />
 					
