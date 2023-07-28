@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <footer className="p-3 p-md-5 ">
+      <footer className="p-3 p-md-5 position-relative ">
         <h2>fresh cart footer</h2>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
@@ -55,6 +55,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+ 
+       
       </footer>
     </>
   );

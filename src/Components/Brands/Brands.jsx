@@ -3,8 +3,10 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Loading from "../Loading/Loading";
+import { useNavigate } from "react-router-dom";
 
 export default function Brands() {
+  const navigate = useNavigate()
   const [allBrands, setallBrands] = useState(null);
   async function getAllBrands() {
     try {
@@ -23,6 +25,15 @@ export default function Brands() {
       getAllBrands();
     }
   });
+
+
+
+
+  function displayBrandProducts(id) {
+
+    navigate(`/brandProducts/${id}`)
+    
+  }
 
   return (
     <>
@@ -45,8 +56,8 @@ export default function Brands() {
           {
              allBrands.map((brand, idx) => {
                 return (
-                  <div className="col-md-3" key={idx}>
-                    <div className="brand ">
+                  <div className="col-md-3" key={idx} onClick={()=>{displayBrandProducts(brand._id)}}>
+                    <div className="brand "  >
                       <img
                         src={brand.image}
                         alt={brand.name}
