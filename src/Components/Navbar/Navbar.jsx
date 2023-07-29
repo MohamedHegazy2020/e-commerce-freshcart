@@ -7,7 +7,7 @@ import { cartContext } from "../../Context/cartContext";
 export default function Navbar({ currUser, clearUserData }) {
 
 
-
+const navigate = useNavigate()
 	const{ cartProductsCount } = useContext(cartContext)
 
 
@@ -19,14 +19,9 @@ export default function Navbar({ currUser, clearUserData }) {
 		$(".nav-link").removeClass("active");
 
 		$(elem).addClass("active");
-	}
-	const navigate = useNavigate();
-
-	function logoutUser() {
-		clearUserData();
-		// setcartProductsCount(null)
-		navigate("/login");
-	}
+	}	// setcartProductsCount(null)
+		// navi;
+	
 
 	return (
 		<>
@@ -72,10 +67,10 @@ export default function Navbar({ currUser, clearUserData }) {
 							</li>
 						</ul>
 
-						<ul className="navbar-nav  mt-2 mt-lg-0">
+						
 							{currUser ? (
-								<>
-									
+								
+								<ul className="navbar-nav  mt-2 mt-lg-0">
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
@@ -86,13 +81,13 @@ export default function Navbar({ currUser, clearUserData }) {
 										>
 											<span className="fa-layers fa-fw fa-xl">
 												<i className="fa-solid fa-cart-shopping"></i>
-												{cartProductsCount?<><span
+												{cartProductsCount?<div><span
 													className="fa-layers-counter    fa-1x  "
 													style={{ top: "-5px", right: "-5px" }}
 												>
 													<span className="fa-2x p-1">{cartProductsCount}</span>
 												</span>
-											</>:''}
+											</div>:''}
 												
 											</span>
 										</Link>
@@ -111,15 +106,17 @@ export default function Navbar({ currUser, clearUserData }) {
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
-											onClick={logoutUser}
-											to="#"
+											onClick={()=>{  clearUserData(); navigate('/login')}}
+											
 										>
 											logout
 										</Link>
 									</li>
-								</>
+									</ul>
+								
 							) : (
 								<>
+								<ul className="navbar-nav  mt-2 mt-lg-0">
 									{" "}
 									<li className="nav-item">
 										<Link
@@ -143,9 +140,10 @@ export default function Navbar({ currUser, clearUserData }) {
 											Register
 										</Link>
 									</li>
+									</ul>
 								</>
 							)}
-						</ul>
+						
 					</div>
 				</div>
 			</nav>

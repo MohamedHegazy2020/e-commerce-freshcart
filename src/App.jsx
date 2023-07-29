@@ -21,7 +21,7 @@ import UserOrder from "./Components/UserOrder/UserOrder";
 
 export default function App() {
 	// current user data
-	const [currUser, setcurrUser] = useState();
+	const [currUser, setcurrUser] = useState(null);
 	useEffect(() => {
 		if (localStorage.getItem("token") && !currUser) {
 			getUserData();

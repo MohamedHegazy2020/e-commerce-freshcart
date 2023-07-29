@@ -17,7 +17,7 @@ export default function Login({ getUserData }) {
 			console.log('hhhhh');
 			setTimeout(() => {
 				$(`.welUser`).fadeOut(1000, () => {
-					$(`.welUser`).remove();
+					$(`.welUser`).remove()
 				});
 
 			}, 3000); 
@@ -35,7 +35,7 @@ export default function Login({ getUserData }) {
 			console.log('hhhhh');
 			setTimeout(() => {
 				$(`.errUser`).fadeOut(1000, () => {
-					$(`.errUser`).remove();
+					$(`.errUser`).remove()
 				});
 
 			}, 3000); 

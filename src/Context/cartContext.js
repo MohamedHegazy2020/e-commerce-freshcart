@@ -147,7 +147,6 @@ export default function CartContextProvider({ children }) {
 			}, 2000);
 		});
 	}
-
 	// cart APIs functions
 	// add product
 	async function addProductToCart(productId) {
@@ -291,7 +290,7 @@ export default function CartContextProvider({ children }) {
 				removeProductFromCart,
 				cartProductsCount,
 				isProductInUserCart,
-				updateProductCount,cartProducts,totalCartPrice,clearUserCart,existCart,cartId
+				updateProductCount,cartProducts,totalCartPrice,clearUserCart,existCart,cartId,
 			}}
 		>
 			{children}
