@@ -67,10 +67,14 @@ const navigate = useNavigate()
 							</li>
 						</ul>
 
-						
+						<ul className="navbar-nav  mt-2 mt-lg-0">
+							<li>
+								helo
+							</li>
 							{currUser ? (
 								
-								<ul className="navbar-nav  mt-2 mt-lg-0">
+								<>
+								{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
@@ -104,19 +108,20 @@ const navigate = useNavigate()
 										</Link>
 									</li>{" "}
 									<li className="nav-item">
-										<Link
+										<Link to={'/login'}
 											className="nav-link text-capitalize "
-											onClick={()=>{  clearUserData(); navigate('/login')}}
+											onClick={()=>{  clearUserData();}}
 											
 										>
 											logout
 										</Link>
 									</li>
-									</ul>
+									{/* </ul> */}
+								</>
 								
 							) : (
 								<>
-								<ul className="navbar-nav  mt-2 mt-lg-0">
+								{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
 									{" "}
 									<li className="nav-item">
 										<Link
@@ -140,10 +145,10 @@ const navigate = useNavigate()
 											Register
 										</Link>
 									</li>
-									</ul>
+									{/* </ul> */}
 								</>
 							)}
-						
+						</ul>
 					</div>
 				</div>
 			</nav>
