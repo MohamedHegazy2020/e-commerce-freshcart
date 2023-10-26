@@ -18,7 +18,7 @@ const{cartId} = useContext(cartContext)
 				{ shippingAddress:values },
 				{ headers: { token: localStorage.getItem("token") } }
 			);
-			// console.log(data);
+			console.log(data);
 		} catch (error) {
 			console.log(error);
 		}

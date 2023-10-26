@@ -5,23 +5,15 @@ import logo from "../../Assets/freshcart-logo.svg";
 import { useContext } from "react";
 import { cartContext } from "../../Context/cartContext";
 export default function Navbar({ currUser, clearUserData }) {
-
-
-const navigate = useNavigate()
-	const{ cartProductsCount } = useContext(cartContext)
-
-
-
-
-
+	// const navigate = useNavigate();
+	const { cartProductsCount } = useContext(cartContext);
 
 	function setAtiveNavItem(elem) {
 		$(".nav-link").removeClass("active");
 
 		$(elem).addClass("active");
-	}	// setcartProductsCount(null)
-		// navi;
-	
+	} // setcartProductsCount(null)
+	// navi;
 
 	return (
 		<>
@@ -68,13 +60,10 @@ const navigate = useNavigate()
 						</ul>
 
 						<ul className="navbar-nav  mt-2 mt-lg-0">
-							<li>
-								helo
-							</li>
+							<li>helo</li>
 							{currUser ? (
-								
 								<>
-								{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
+									{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
@@ -85,14 +74,20 @@ const navigate = useNavigate()
 										>
 											<span className="fa-layers fa-fw fa-xl">
 												<i className="fa-solid fa-cart-shopping"></i>
-												{cartProductsCount?<div><span
-													className="fa-layers-counter    fa-1x  "
-													style={{ top: "-5px", right: "-5px" }}
-												>
-													<span className="fa-2x p-1">{cartProductsCount}</span>
-												</span>
-											</div>:''}
-												
+												{cartProductsCount ? (
+													<div>
+														<span
+															className="fa-layers-counter    fa-1x  "
+															style={{ top: "-5px", right: "-5px" }}
+														>
+															<span className="fa-2x p-1">
+																{cartProductsCount}
+															</span>
+														</span>
+													</div>
+												) : (
+													""
+												)}
 											</span>
 										</Link>
 									</li>
@@ -108,21 +103,21 @@ const navigate = useNavigate()
 										</Link>
 									</li>{" "}
 									<li className="nav-item">
-										<Link to={'/login'}
+										<Link
+											to={"/login"}
 											className="nav-link text-capitalize "
-											onClick={()=>{  clearUserData();}}
-											
+											onClick={() => {
+												clearUserData();
+											}}
 										>
 											logout
 										</Link>
 									</li>
 									{/* </ul> */}
 								</>
-								
 							) : (
 								<>
-								{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
-									{" "}
+									{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}{" "}
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
