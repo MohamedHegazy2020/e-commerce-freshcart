@@ -29,7 +29,7 @@ The navigation bar that allows users to access different pages and features
 Installation and Usage
 To run this website locally, you need to have Node.js and npm installed on your machine. You also need to have the freshCart API running on your local server. Then, follow these steps:
 
-Clone this repo to your local machine using git clone [https://github.com/your-username/freshCart.git](https://github.com/MohamedHegazy2020/e-commerce-freshcart.git)
+Clone this repo to your local machine using git clone https://github.com/MohamedHegazy2020/e-commerce-freshcart.git
 Navigate to the project folder using cd freshCart
 Install the dependencies using npm install
 
