@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Loading from "../Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Brands() {
   const navigate = useNavigate()
@@ -38,7 +39,9 @@ export default function Brands() {
   return (
     <>
       <div className="container py-5">
-
+<Helmet>
+  <title>Brands</title>
+</Helmet>
 
         {allBrands? <div className="row align-items-center">
           <div className="col-md-3  ">

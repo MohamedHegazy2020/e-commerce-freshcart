@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import React from "react";
 import { useContext } from "react";
 import { cartContext } from "../../Context/cartContext";
+import { Helmet } from 'react-helmet';
 
 export default function UserOrder() {
 const{cartId} = useContext(cartContext)
@@ -51,6 +52,9 @@ const{cartId} = useContext(cartContext)
 
 	return (
 		<>
+		<Helmet>
+				<title>Order</title>
+			</Helmet>
 			<div className="container py-5">
 				<div className="row justify-content-center">
                 <div className="col-md-6">

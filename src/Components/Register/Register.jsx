@@ -3,6 +3,7 @@ import React from "react";
 import $ from "jquery";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 export default function Register() {
 
@@ -80,6 +81,9 @@ const navigate =  useNavigate()
 
   return (
     <>
+    <Helmet>
+				<title>Sign up</title>
+			</Helmet>
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-md-6">

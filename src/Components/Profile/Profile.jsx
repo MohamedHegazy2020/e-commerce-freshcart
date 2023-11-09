@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { cartContext } from "../../Context/cartContext";
 import Loading from "./../Loading/Loading";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 export default function Profile({ currUser }) {
 	const { cartProductsCount } = useContext(cartContext);
 
@@ -26,7 +27,9 @@ export default function Profile({ currUser }) {
 	}
 	console.log(userOrder);
 	return (
-		<>
+		<><Helmet>
+		<title>{currUser.name.charAt(0).toUpperCase()+ currUser.name.slice(1) + ' Profile'}</title>
+	</Helmet>
 			{userOrder ? (
 				<>
 					<section className="vh-100">

@@ -3,6 +3,7 @@ import CartRow from "../CartRow/CartRow";
 import { cartContext } from "../../Context/cartContext";
 import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Cart({ currUser }) {
 	const {
@@ -15,6 +16,9 @@ export default function Cart({ currUser }) {
 
 	return (
 		<>
+			<Helmet>
+				<title>Cart</title>
+			</Helmet>
 			{existCart && cartProductsCount ? (
 				<>
 					{cartProducts ? (
@@ -37,7 +41,8 @@ export default function Cart({ currUser }) {
 											clearUserCart();
 										}}
 									>
-										<i className="fa-solid fa-trash-can me-1"></i>Remove from cart
+										<i className="fa-solid fa-trash-can me-1"></i>Remove from
+										cart
 									</button>
 								</div>
 							</div>
@@ -53,7 +58,7 @@ export default function Cart({ currUser }) {
 										</tr>
 									</thead>
 									<tbody>
-										{cartProducts.map((product ,idx) => {
+										{cartProducts.map((product, idx) => {
 											return (
 												<>
 													<CartRow key={idx} product={product} />
@@ -73,10 +78,12 @@ export default function Cart({ currUser }) {
 									</div>
 									<div className="col-md-6">
 										<div className=" text-end">
-											<Link to={'/cashOrder'}><button className="btn btn-primary  ">
-												{" "}
-												create new order
-											</button></Link>
+											<Link to={"/cashOrder"}>
+												<button className="btn btn-primary  ">
+													{" "}
+													create new order
+												</button>
+											</Link>
 										</div>
 									</div>
 								</div>

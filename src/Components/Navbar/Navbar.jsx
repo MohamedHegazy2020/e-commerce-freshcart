@@ -10,7 +10,6 @@ export default function Navbar({ currUser, clearUserData }) {
 
 	function setAtiveNavItem(elem) {
 		$(".nav-link").removeClass("active");
-
 		$(elem).addClass("active");
 	} // setcartProductsCount(null)
 	// navi;
@@ -59,11 +58,11 @@ export default function Navbar({ currUser, clearUserData }) {
 							</li>
 						</ul>
 
-						<ul className="navbar-nav  mt-2 mt-lg-0">
-							<li>helo</li>
+						{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
+							{/* <li>helo</li> */}
 							{currUser ? (
 								<>
-									{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}
+									<ul className="navbar-nav  mt-2 mt-lg-0">
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
@@ -113,11 +112,11 @@ export default function Navbar({ currUser, clearUserData }) {
 											logout
 										</Link>
 									</li>
-									{/* </ul> */}
+									</ul>
 								</>
 							) : (
 								<>
-									{/* <ul className="navbar-nav  mt-2 mt-lg-0"> */}{" "}
+									<ul className="navbar-nav  mt-2 mt-lg-0">
 									<li className="nav-item">
 										<Link
 											className="nav-link text-capitalize "
@@ -140,10 +139,10 @@ export default function Navbar({ currUser, clearUserData }) {
 											Register
 										</Link>
 									</li>
-									{/* </ul> */}
+									</ul>
 								</>
 							)}
-						</ul>
+						{/* </ul> */}
 					</div>
 				</div>
 			</nav>

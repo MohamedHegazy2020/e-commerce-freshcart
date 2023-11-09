@@ -17,7 +17,7 @@ export default function CartContextProvider({ children }) {
 	const [cartId, setcartId] = useState(null);
 	const [existCart, setexistCart] = useState(false);
 	// console.log(cartId);
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (!cartProductsCount) getLoggedUserCart();
@@ -71,13 +71,11 @@ export default function CartContextProvider({ children }) {
 		}
 	}
 
-
-	// 
-
+	//
 
 	function displaySuccClearToast() {
-			$(".toast-container")
-				.append(`<div class="toast align-items-center  text-bg-danger     clrToast border-0" role="alert" aria-live="assertive" aria-atomic="true" >
+		$(".toast-container")
+			.append(`<div class="toast align-items-center  text-bg-danger     clrToast border-0" role="alert" aria-live="assertive" aria-atomic="true" >
 				<div class="toast-header text-capitalize">
 				<strong class="me-auto">Clear cart </strong>
 				<small class="text-muted"></small>
@@ -87,22 +85,19 @@ export default function CartContextProvider({ children }) {
 				</div>
 			      </div> `);
 
-			$(`.clrToast `).fadeIn(1000, () => {
-				setTimeout(() => {
-					$(`.clrToast`).fadeOut(1000, () => {
-						$(`.clrToast`).remove();
-					});
-				}, 2000);
-			});
-		}
-	
-
-
+		$(`.clrToast `).fadeIn(1000, () => {
+			setTimeout(() => {
+				$(`.clrToast`).fadeOut(1000, () => {
+					$(`.clrToast`).remove();
+				});
+			}, 2000);
+		});
+	}
 
 	function displaySuccUpdateToast({ status, data }) {
 		if (status === "success") {
 			$(".toast-container")
-				.append(  `<div class="toast align-items-center  text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" updatedAt ="${data.products.updatedAt}">
+				.append(`<div class="toast align-items-center  text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" updatedAt ="${data.products.updatedAt}">
 				<div class="toast-header text-capitalize">
 				<strong class="me-auto"> Update count in cart </strong>
 				<small class="text-muted"></small>
@@ -114,15 +109,13 @@ export default function CartContextProvider({ children }) {
 
 			$(`[updatedAt = ${data.products.updatedAt}] `).fadeIn(1000, () => {
 				setTimeout(() => {
-					$(`[updatedAt = ${data.products.updatedAt}]` ).fadeOut(1000, () => {
-						$(`[updatedAt = ${data.products.updatedAt}]` ).remove();
+					$(`[updatedAt = ${data.products.updatedAt}]`).fadeOut(1000, () => {
+						$(`[updatedAt = ${data.products.updatedAt}]`).remove();
 					});
 				}, 2000);
 			});
 		}
 	}
-
-
 
 	//
 
@@ -136,13 +129,13 @@ export default function CartContextProvider({ children }) {
 				<div class="toast-body">
 				${message}
 				</div>
-			      </div>` );
+			      </div>`);
 
 		$(`.authWarning`).fadeIn(1000, () => {
 			setTimeout(() => {
 				$(`.authWarning `).fadeOut(1000, () => {
 					$(`.authWarning `).remove();
-					navigate('/login')
+					navigate("/login");
 				});
 			}, 2000);
 		});
@@ -196,11 +189,8 @@ export default function CartContextProvider({ children }) {
 			// console.log(data);
 
 			if (data.message === "success") {
-				getLoggedUserCart()
+				getLoggedUserCart();
 				displaySuccClearToast();
-
-
-				
 			}
 		} catch (error) {
 			console.log("error:", error);
@@ -214,19 +204,19 @@ export default function CartContextProvider({ children }) {
 				`https://ecommerce.routemisr.com/api/v1/cart`,
 				{ headers: { token: localStorage.getItem("token") } }
 			);
-			console.log(data);
+			// console.log(data);
 
 			if (data.status === "success") {
 				setcartProducts(data.data.products);
 				setcartProductsCount(data.numOfCartItems);
-				settotalCartPrice(data.data.totalCartPrice)
-				setexistCart(true)
-				setcartId(data.data._id)
+				settotalCartPrice(data.data.totalCartPrice);
+				setexistCart(true);
+				setcartId(data.data._id);
 			}
 		} catch (error) {
 			console.log("error:", error);
-			if(error.response.data.statusMsg === "fail"){
-				setexistCart(false)
+			if (error.response.data.statusMsg === "fail") {
+				setexistCart(false);
 				setcartProductsCount(null);
 
 				// console.log(existCart)
@@ -243,9 +233,8 @@ export default function CartContextProvider({ children }) {
 			);
 
 			if (data.status === "success") {
-				getLoggedUserCart()
-			displaySuccUpdateToast(data);
-
+				getLoggedUserCart();
+				displaySuccUpdateToast(data);
 			}
 		} catch (error) {
 			console.log("error:", error);
@@ -268,21 +257,6 @@ export default function CartContextProvider({ children }) {
 		return false;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	return (
 		<cartContext.Provider
 			value={{
@@ -290,7 +264,12 @@ export default function CartContextProvider({ children }) {
 				removeProductFromCart,
 				cartProductsCount,
 				isProductInUserCart,
-				updateProductCount,cartProducts,totalCartPrice,clearUserCart,existCart,cartId,
+				updateProductCount,
+				cartProducts,
+				totalCartPrice,
+				clearUserCart,
+				existCart,
+				cartId,
 			}}
 		>
 			{children}

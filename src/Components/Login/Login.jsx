@@ -3,6 +3,7 @@ import React from "react";
 import $ from "jquery";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 export default function Login({ getUserData }) {
 	function displayWelcomeUserToast() {
@@ -14,7 +15,6 @@ export default function Login({ getUserData }) {
 			      </div> `);
 
 		$(`.welUser`).fadeIn(1000, () => {
-			console.log('hhhhh');
 			setTimeout(() => {
 				$(`.welUser`).fadeOut(1000, () => {
 					$(`.welUser`).remove()
@@ -92,6 +92,9 @@ export default function Login({ getUserData }) {
 
 	return (
 		<>
+		<Helmet>
+				<title>Log in</title>
+			</Helmet>
 			<div className="container py-5">
 				<div className="row justify-content-center">
 					<div className="col-md-6">

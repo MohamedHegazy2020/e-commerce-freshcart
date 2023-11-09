@@ -3,6 +3,7 @@ import Navbar from "./../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import Toast from "../Toast/Toast";
+import { Helmet } from "react-helmet";
 
 export default function Layout({ currUser, clearUserData }) {
 
@@ -19,7 +20,9 @@ export default function Layout({ currUser, clearUserData }) {
 	return (
 		<>
 			
-      
+			<Helmet>
+				<title>FreshCart</title>
+			</Helmet>
       
       <Navbar currUser={currUser} clearUserData={clearUserData} />
 			<Toast/>
