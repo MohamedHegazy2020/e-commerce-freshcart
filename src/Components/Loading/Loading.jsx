@@ -13,6 +13,7 @@ export default function Loading() {
 					<svg
 						className={load.cart}
 						role="img"
+						Loading='lazy'
 						aria-label="Shopping cart line animation"
 						viewBox="0 0 128 128"
 						width="128px"

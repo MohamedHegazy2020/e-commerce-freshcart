@@ -16,7 +16,7 @@ export default function HomeSlider() {
 		<>
 			<Slider {...settings}>
 				<div>
-					<img
+					<img loading="lazy"
 						src={require("../../Assets/homeSlider_black_friday_facebook_banner_02.png")}
 						alt=""
 						className="w-100"
@@ -25,7 +25,7 @@ export default function HomeSlider() {
 				</div>
 
 				<div>
-					<img
+					<img loading="lazy"
 						src={require("../../Assets/homeSlider2.jpg")}
 						alt=""
 						className="w-100"
@@ -33,7 +33,7 @@ export default function HomeSlider() {
 					/>
 				</div>
 				<div>
-					<img
+					<img loading="lazy"
 						src={require("../../Assets/homeSlider3.jpg")}
 						alt=""
 						className="w-100"
@@ -41,7 +41,7 @@ export default function HomeSlider() {
 					/>
 				</div>
 				<div>
-					<img
+					<img loading="lazy"
 						src={require("../../Assets/homeSlider4.jpg")}
 						alt=""
 						className="w-100"
@@ -49,7 +49,7 @@ export default function HomeSlider() {
 					/>
 				</div>
 				<div>
-					<img
+					<img loading="lazy"
 						src={require("../../Assets/homeSlider5.jpg")}
 						alt=""
 						className="w-100"
@@ -57,7 +57,7 @@ export default function HomeSlider() {
 					/>
 				</div>
 				<div>
-					<img
+					<img loading="lazy"
 						src={require("../../Assets/homeSlider6.jpg")}
 						alt=""
 						className="w-100"

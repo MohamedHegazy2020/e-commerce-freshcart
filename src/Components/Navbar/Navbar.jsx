@@ -19,7 +19,7 @@ export default function Navbar({ currUser, clearUserData }) {
 			<nav className="navbar navbar-expand-md navbar-light shadow">
 				<div className="container-fluid">
 					<Link className="navbar-brand" to="/">
-						<img src={logo} alt="" />
+						<img loading="lazy" src={logo} alt="" />
 					</Link>
 					<button
 						className="navbar-toggler d-lg-none"

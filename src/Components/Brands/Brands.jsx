@@ -61,7 +61,7 @@ export default function Brands() {
                 return (
                   <div className="col-md-3" key={idx} onClick={()=>{displayBrandProducts(brand._id)}}>
                     <div className="brand "  >
-                      <img
+                      <img Loading='lazy'
                         src={brand.image}
                         alt={brand.name}
                         className="img-fluid pointer"

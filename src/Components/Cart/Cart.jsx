@@ -102,7 +102,7 @@ export default function Cart({ currUser }) {
 					</h2>
 
 					<div className="text-center">
-						<img
+						<img Loading='lazy'
 							className="w-25"
 							src={require("../../Assets/no-shopping-cart.png")}
 							alt=""

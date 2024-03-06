@@ -43,7 +43,7 @@ export default function DetailSlider({ imgs }) {
 						width: "30px",
 					}}
 				>
-					<img
+					<img Loading='lazy'
 						src={img}
 						alt=""
 						className={
@@ -64,7 +64,7 @@ export default function DetailSlider({ imgs }) {
 				<Slider {...settings}>
 					{imgs.map((img) => {
 						return (
-							<img
+							<img Loading='lazy'
 								src={img}
 								key={img}
 								className="img-fluid rounded-top"

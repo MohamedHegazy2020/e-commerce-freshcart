@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
 				<div>
 					<div className={card.card + " card bg-light"}>
 						<div className={"position-relative " + card.card_upper}>
-							<img className="card-img" src={product.imageCover} alt="Title" />
+							<img Loading='lazy' className="card-img" src={product.imageCover} alt="Title" />
 							<div className={card.overlay}>
 								<div
 									className={card.ico_container + "  rounded-2 me-1 "}

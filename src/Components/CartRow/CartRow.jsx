@@ -14,7 +14,7 @@ export default function CartRow({ product }) {
 				<td>
 					{" "}
 					<div className="">
-						<img
+						<img Loading='lazy'
 							src={product.product.imageCover}
 							style={{ maxHeight: "70px" }}
 							alt={product.product.title}
