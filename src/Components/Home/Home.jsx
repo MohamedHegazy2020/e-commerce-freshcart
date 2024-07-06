@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
-import ProductCard from "../ProductCard/ProductCard";
+import React, { lazy, useEffect, useState } from "react";
+
 import axios from "axios";
 import Loading from "../Loading/Loading";
 import HomeSlider from "../HomeSlider/HomeSlider";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import * as $ from "jquery";
+
+
+const ProductCard = lazy(()=> import( "../ProductCard/ProductCard"))
 
 export default function Home() {
 	async function getAllProducts() {

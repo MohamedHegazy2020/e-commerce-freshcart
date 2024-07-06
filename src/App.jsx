@@ -43,6 +43,8 @@ export default function App() {
 
 	function ProtectedRoute({ children }) {
 		if (currUser) {
+			// getUserData();
+
 			return <>{children}</>;
 		} else {
 			return <Navigate to="/login" />;

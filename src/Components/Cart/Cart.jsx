@@ -5,6 +5,7 @@ import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
+
 export default function Cart({ currUser }) {
 	const {
 		cartProducts,
@@ -26,14 +27,14 @@ export default function Cart({ currUser }) {
 							<h2 className="text-capitalize text-center">
 								{currUser.name} <span>Cart</span>
 							</h2>
-							<div className="row px-2 mt-3 justify-content-between">
+							<div className="row px-2 mt-3 justify-content-between  ">
 								<div className="col-md-6">
-									<h5 className="text-capitalize">
+									<h5 className="text-capitalize text-md-start  text-center ">
 										total Products count:{" "}
 										<span className="ms-2">{cartProductsCount}</span>
 									</h5>
 								</div>
-								<div className="col-md-6  text-end">
+								<div className="col-md-6 text-md-end text-center  ">
 									<button
 										type="button"
 										className="btn btn-danger ms-auto"
@@ -47,26 +48,12 @@ export default function Cart({ currUser }) {
 								</div>
 							</div>
 
-							<div className="table-responsive-md mt-4">
-								<table className="table table-light bg-opacity-75 shadow">
-									<thead>
-										<tr>
-											<th className="text-capitalize ">item</th>
-											<th className="text-capitalize ">qunatity</th>
-											<th className="text-capitalize ">Remove</th>
-											<th className="text-capitalize ">Price /Piece</th>
-										</tr>
-									</thead>
-									<tbody>
-										{cartProducts.map((product, idx) => {
-											return (
-												<>
-													<CartRow key={idx} product={product} />
-												</>
-											);
-										})}
-									</tbody>
-								</table>
+							<div className="row my-3 ">
+								{cartProducts.map((product ,i)=><>
+								
+							<CartRow key={i} product={product}/>
+								</>)}
+								
 								<div className="row px-2 ">
 									<div className="col-md-6">
 										<div className="totalPrice text-capitalize">
