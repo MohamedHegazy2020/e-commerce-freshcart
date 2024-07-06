@@ -6,7 +6,7 @@ import HomeSlider from "../HomeSlider/HomeSlider";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import * as $ from "jquery";
-
+    
 
 const ProductCard = lazy(()=> import( "../ProductCard/ProductCard"))
 
