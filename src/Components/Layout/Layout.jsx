@@ -1,10 +1,9 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Navbar from "./../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import Toast from "../Toast/Toast";
 import { Helmet } from "react-helmet";
-import Loading from "../Loading/Loading";
 
 export default function Layout({ currUser, clearUserData }) {
   // $('.toast').fadeIn(1000 , ()=>{
